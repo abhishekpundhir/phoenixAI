@@ -34,7 +34,7 @@ connectDB();
 // });
 
 // Route for chatting
-// app.post("/talk", async (req, res) => {
+// app.post("/chat", async (req, res) => {
 //   try {
 //     const { prompt } = req.body;
 
