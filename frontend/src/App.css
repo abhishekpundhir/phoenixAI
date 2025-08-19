@@ -1,0 +1,19 @@
+/* @import "tailwindcss"; */
+
+*{
+ color: #ececec;
+ font-family: roboto, 'Open Sans','Helvetic Neue' , sans-serif;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.app{
+    background-color: #212121;
+    /* background-color: #171717; */
+    display: flex;
+}

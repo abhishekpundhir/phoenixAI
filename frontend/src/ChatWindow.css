@@ -1,0 +1,10 @@
+.chatWindow{
+    background-color: #0f0e0e;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    text-align: center;
+}
