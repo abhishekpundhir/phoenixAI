@@ -1,10 +1,135 @@
 .chatWindow{
-    background-color: #0f0e0e;
+    /* background-color: #0f0e0e; */
     height: 100vh;
     width: 100%;
     display: flex;
+    /* position: sticky; */
     flex-direction: column;
     justify-content: space-between;
     justify-items: center;
-    text-align: center;
+    /* text-align: center; */
+}
+
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     /* background-color: rgb(5, 4, 4); */
+}
+
+
+.navbar h3{
+        text-align: center;
+    padding-top: 6px;
+    padding-left: 11px;
+
+}
+.navbar span{
+    margin: 2rem;
+}
+
+.DropDown{
+    margin: 1rem 2rem; 
+}
+
+/* .hist{
+    background-color: rgb(79, 117, 223);
+} */
+
+
+.chatInput{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.inputBox{ 
+    width: 100%;
+    position: relative;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    width: 100%;
+    border: none;
+    background-color: rgb(10, 10, 10);
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+
+input:focus{
+    outline: none;
+}
+
+.info{
+    font-size: 0.8rem ;
+    padding: .9rem;
+    color: rgb(170, 170, 170);
+}
+
+
+#submit{
+    cursor: pointer;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    font-size: 21px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#submit i:hover{
+    color: rgb(182, 182, 182);
+}
+
+
+
+
+/* media Qery */
+
+@media (max-width: 768px) {
+  .navbar {
+    /* background: pink; */
+    font-size: 14px;
+  }
+
+  .inputBox{ 
+    width: 80%;
+    position: relative;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+}
+
+
+
+#heading{
+  background-image: linear-gradient(rgb(232, 244, 255), rgb(29, 27, 27));
+    color: transparent;
+    background-clip: text;
+
+}
+
+
+#heading2{
+  background-image: linear-gradient(rgb(7, 255, 255), rgb(81, 127, 253));
+    color: transparent;
+    background-clip: text;
+
 }

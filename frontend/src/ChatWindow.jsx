@@ -1,29 +1,125 @@
-import "./ChatWindow.css"
-import "./Sidebar.css"
-import Chat from "./Chat"
+import "./ChatWindow.css";
+import "./Chat.css";
+import "./Sidebar.css";
+import Chat from "./Chat";
+import { ScaleLoader } from "react-spinners";
+
+import { MyContext } from "./MyContext";
+import { useContext, useState, useEffect } from "react";
+
 function ChatWindow() {
-    return (
-        <div className="chatWindow">
-            <div className="navbar">
-                <span >Welcome To Phoenix</span>
-            </div>
+  const {
+    prompt,
+    setPrompt,
+    reply,
+    setReply,
+    currentThreadId,
+    prevChats,
+    setPrevChats,
+  } = useContext(MyContext);
 
-              <a href="https://github.com/abhishekpundhir/finityAI"><div className="">
-                <h3>Phoenix Developer</h3>
-                <img className="logo2" style={{borderRadius:"5o%", justifyContent:""}} src="src\assets\you.jpg" alt="PhoenixAi logo"/>
-              
-             </div></a>
-            <Chat />
+  const [loading, setLoading] = useState(false);
 
-            <div className="chatInput">
-            <div className="userInput">
-                <input placeholder="Drop it, I Got You"></input>
-                <div id="submit"><i class="fa-solid fa-paper-plane"></i> </div>
-            </div>
-            <p className="info">Phoenix isn't flawless, so double-check the important stuff ✨</p>
-            </div>
+  const getReply = async () => {
+    if (!prompt.trim()) return; // prevent empty sends
+    setLoading(true);
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: prompt,
+        threadId: currentThreadId,
+      }),
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/api/chat", options);
+      const res = await response.json();
+
+      // add user message immediately (optimistic update)
+      setPrevChats((prev) => [
+        ...prev,
+        { role: "user", content: prompt },
+      ]);
+
+      // clear input box
+      setPrompt("");
+
+      // set assistant reply once fetched
+      setReply(res.reply);
+    } catch (err) {
+      console.log(`getReply Error: ${err}`);
+    }
+
+    setLoading(false);
+  };
+
+  // when reply updates, add assistant message
+  useEffect(() => {
+    if (reply) {
+      setPrevChats((prev) => [
+        ...prev,
+        { role: "assistant", content: reply },
+      ]);
+    }
+  }, [reply]);
+
+  return (
+    <div className="chatWindow text-center">
+      <div className="navbar">
+        <button>
+          <img
+            className="logo"
+            src="src/assets/logo.png"
+            alt="PhoenixAi logo"
+          />
+          <h3 className="heading" style={{fontWeight:"700"}}>Phoenix</h3>
+        </button>
+
+        <div className="DropDown cursor-pointer">
+          <span
+            className="hist"
+            style={{ fontSize: "29px", color: "#B197FC" }}
+          >
+            <i id="heading2" className="fa-regular fa-circle fa-fade"></i>
+          </span>
         </div>
-    )
+      </div>
+
+      {/* Chat Messages */}
+      <Chat />
+
+      {/* Loader */}
+      <ScaleLoader
+        className="mb-7 flex justify-center"
+        color="#5548ef"
+        loading={loading}
+      />
+
+      {/* Input Section */}
+      <div className="chatInput">
+        <div className="inputBox">
+          <input
+            placeholder="Drop it, I Got You"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+            onKeyDown={(e) =>
+              e.key === "Enter" ? getReply() : null
+            }
+          />
+          <div id="submit" onClick={getReply}>
+            <i className="fa-solid fa-paper-plane"></i>
+          </div>
+        </div>
+        <p className="info">
+          Phoenix isn't flawless, so double-check the important stuff!  Visit  <a href="https://github.com/abhishekpundhir" className="alink">Er. Abhi</a>
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default ChatWindow;

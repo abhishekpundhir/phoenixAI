@@ -1,11 +1,23 @@
 .sidebar {
+    margin: 12px;
     background-color: #171717;
     color: #b4b4b4;
-    height: 100vh;
-    width: 320px;
+    height: 100%;
+    width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 20px;
+    position: sticky;
+
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.02);
+background: transparent;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.9px);
+-webkit-backdrop-filter: blur(5.9px);
+border: 1px solid rgba(255, 255, 255, 0.137);
 }
 
 
@@ -14,41 +26,50 @@ button {
     justify-content: space-around;
     align-items: center;
     margin: 10px;
-    padding: 12px;
-    border-radius: 15px;
+    padding: 13px;
+    /* width: 200px; */
+    border-radius: 20px;
     background-color: transparent;
     cursor: pointer;
-    border: .5px solid rgb(34, 34, 34);
+    /* border: .5px solid rgb(34, 34, 34); */
 }
 
 button:hover {
     cursor: pointer;
-    background-color: #1f1e1e;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.02);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.9px);
+-webkit-backdrop-filter: blur(5.9px);
 }
 
 .logo {
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
+    /* margin-right: 20px; */
 }
 
-.logo2 {
+/* .logo2 {
     height: 40px;
     width: 40px;
-    border-radius: 50%;
-}
+    border-radius: 40%;
+} */
 
 
 button span {
-    font-size: 26px;
+    font-size: 24px;
 }
 
 
 .history {
-    margin: 10px;
+    /* margin: 10px;
     padding: 10px;
-    height: 100%;
-    border: .5px solid rgb(39, 39, 39);
+    height: 100%; */
+    /* border: .5px solid rgb(39, 39, 39); */
     border-radius: 15px;
+    font-size: 32px;
+    text-align: center;
 }
 
 .history li {
@@ -62,27 +83,47 @@ button span {
 
 .history li:hover {
     cursor: pointer;
-    background-color: #1f1e1e;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.9px);
+-webkit-backdrop-filter: blur(5.9px);
 }
 
+
+.history span:hover{
+      cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.9px);
+-webkit-backdrop-filter: blur(5.9px);
+}
 .version {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     padding: 15px;
     margin: 10px;
     line-height: 30px;
     font-size: 17px;
     text-align: center;
+
     border-radius: 10px;
     /* background-color: #1f1e1e;; */
-    border: .5px solid rgb(39, 39, 39);
+    /* border: .5px solid rgb(39, 39, 39); */
+    
 }
 
 .version:hover {
     cursor: pointer;
-    background-color: #1f1e1e;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.9px);
+-webkit-backdrop-filter: blur(5.9px);
 }
+
+
+
