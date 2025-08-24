@@ -32,7 +32,7 @@ function Chat() {
     <>
       {newChat && (
         <h2 className="text-center">
-          Wassup!  Cutie <a href="https://www.instagram.com/iashlyee/" className=" alink"> 🕊️</a>
+          I'll Rewrite The Dictionary Just To Add Your Name Under Perfection <a href="https://www.instagram.com/iashlyee/" className=" alink"> 🕊️</a>
           {/* If Smiles Were Currency! You'd be a Billionaire */}
         </h2>
       )}

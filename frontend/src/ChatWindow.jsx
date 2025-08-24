@@ -6,7 +6,7 @@ import { ScaleLoader } from "react-spinners";
 
 import { MyContext } from "./MyContext";
 import { useContext, useState, useEffect } from "react";
-
+import {v1 as uuidv1} from "uuid"
 function ChatWindow() {
   const {
     prompt,
@@ -14,8 +14,10 @@ function ChatWindow() {
     reply,
     setReply,
     currentThreadId,
+    setCurrentThreadId,
     prevChats,
     setPrevChats,
+    setNewChat,
   } = useContext(MyContext);
 
   const [loading, setLoading] = useState(false);
@@ -67,6 +69,19 @@ function ChatWindow() {
     }
   }, [reply]);
 
+
+
+// NewChat_Function to start a New chat
+
+
+const  createNewChat = () =>{
+    setNewChat(true);
+    setPrompt("");
+    setReply(null);
+    setCurrentThreadId(uuidv1());
+    setPrevChats([]);
+}
+
   return (
     <div className="chatWindow text-center">
       <div className="navbar">
@@ -79,12 +94,12 @@ function ChatWindow() {
           <h3 className="heading" style={{fontWeight:"700"}}>Phoenix</h3>
         </button>
 
-        <div className="DropDown cursor-pointer">
+        <div className="DropDown cursor-pointer  ">
           <span
             className="hist"
             style={{ fontSize: "29px", color: "#B197FC" }}
           >
-            <i id="heading2" className="fa-regular fa-circle fa-fade"></i>
+            <i onClick={createNewChat}  id="heading2" className="fa-regular fa-circle fa-fade"></i>
           </span>
         </div>
       </div>

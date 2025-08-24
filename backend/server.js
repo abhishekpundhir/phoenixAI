@@ -16,10 +16,10 @@ app.use("/api", chatRoutes);
 const connectDB = async() => {
    try{
     await mongoose.connect(process.env.MONGO_URI)
-    console.log("Successfully Connected to Finity Database.....");
+    console.log("Successfully Connected to Phoenix Database.....");
    }catch(err){
 
-     console.log(`Connection faild with Finity Database! Error: ${err}`);
+     console.log(`Connection faild with Phoenix Database! Error: ${err}`);
    }
 }   
 connectDB();
@@ -80,5 +80,5 @@ connectDB();
 
 
 app.listen(3000, () => {
-  console.log("finity server running on http://localhost:3000");
+  console.log("Phoenix server running on http://localhost:3000");
 });
