@@ -110,7 +110,7 @@ const  createNewChat = () =>{
       {/* Loader */}
       <ScaleLoader
         className="mb-7 flex justify-center"
-        color="#5548ef"
+        color="#7A85C1"
         loading={loading}
       />
 
