@@ -2,6 +2,7 @@ import "./ChatWindow.css";
 import "./Chat.css";
 import "./Sidebar.css";
 import Chat from "./Chat";
+import logo from "./assets/logo.png";
 import { ScaleLoader } from "react-spinners";
 
 import { MyContext } from "./MyContext";
@@ -90,7 +91,7 @@ const  createNewChat = () =>{
         <button>
           <img
             className="logo"
-            src="src/assets/logo.png"
+            src={logo}
             alt="PhoenixAi logo"
           />
           <h3 className="heading" style={{fontWeight:"700"}}>Phoenix</h3>
