@@ -7,6 +7,8 @@ import { ScaleLoader } from "react-spinners";
 import { MyContext } from "./MyContext";
 import { useContext, useState, useEffect } from "react";
 import {v1 as uuidv1} from "uuid"
+
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
 function ChatWindow() {
   const {
     prompt,
@@ -38,7 +40,7 @@ function ChatWindow() {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/chat", options);
+      const response = await fetch(`${API_BASE}/api/chat`, options);
       const res = await response.json();
 
       // add user message immediately (optimistic update)

@@ -1,0 +1,35 @@
+# render.yaml - blueprint for Render: deploy backend (Node) and frontend (Vite static)
+services:
+  - type: web
+    name: phoenix-backend
+    runtime: node
+    branch: main
+    rootDir: backend
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      # DO NOT hardcode secrets here. sync: false will prompt in the Dashboard
+      - key: MONGO_URI
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      # Optional frontend URL (if you want backend to explicitly whitelist origin)
+      - key: FRONTEND_URL
+        sync: false
+
+  - type: web
+    name: phoenix-frontend
+    runtime: static
+    branch: main
+    rootDir: frontend
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./dist
+    # Inject the backend's external URL into the frontend build as VITE_API_URL
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: phoenix-backend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
