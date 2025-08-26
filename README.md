@@ -4,10 +4,7 @@
 PhoenixAI: The Assistant that codes, Thinks, and Dreams with you.
 # 🔥 Phoenix AI – Privacy-First ChatGPT Clone  
 
-
-
-) <!-- Replace with actual logo path -->
-
+ 
 ### 🚀 Ayy, What’s Poppin! Cutie?  
 Phoenix AI is a **minimal, privacy-first AI chat Application** built with **React + Node.js**.  
 Unlike traditional chatbots, Phoenix doesn’t store your conversations — ensuring **zero data leaks** and **maximum user trust**.  
