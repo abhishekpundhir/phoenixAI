@@ -1,5 +1,6 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/748665c7-9220-462f-a5c9-3192b9e22f05" /># finityAI
-FinityAI: The Assistant that codes, Thinks, and Dreams with you.
+<img width="679" height="382" alt="image" src="https://github.com/user-attachments/assets/baf1c5cf-e116-45d8-9bb4-07d9244a672d" />
+Phoenix
+Phoenixai: The Assistant that codes, Thinks, and Dreams with you.
 # 🔥 Phoenix AI – Privacy-First ChatGPT Clone  
 
 
