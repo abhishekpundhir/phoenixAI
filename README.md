@@ -1,6 +1,7 @@
 <img width="679" height="382" alt="image" src="https://github.com/user-attachments/assets/baf1c5cf-e116-45d8-9bb4-07d9244a672d" />
-Phoenix
-Phoenixai: The Assistant that codes, Thinks, and Dreams with you.
+
+
+PhoenixAI: The Assistant that codes, Thinks, and Dreams with you.
 # 🔥 Phoenix AI – Privacy-First ChatGPT Clone  
 
 
