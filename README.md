@@ -2,7 +2,7 @@
 
 
 PhoenixAI: The Assistant that codes, Thinks, and Dreams with you.
-# 🔥 Phoenix AI – Privacy-First ChatGPT Clone  
+# 🔥 Phoenix AI – Privacy-First AI Chat Application  
 
  
 ### 🚀 Ayy, What’s Poppin! Cutie?  
